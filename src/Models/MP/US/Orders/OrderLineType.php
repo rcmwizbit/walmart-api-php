@@ -64,7 +64,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => 'string',
         'fulfillment' => '\Walmart\Models\MP\US\Orders\FulfillmentType',
         'serialNumbers' => 'string[]',
-        'intentToCancel' => 'string',
+        'intentToCancelOverride' => 'string',
         'configId' => 'string',
         'sellerOrderId' => 'string'
     ];
@@ -89,7 +89,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => null,
         'fulfillment' => null,
         'serialNumbers' => null,
-        'intentToCancel' => null,
+        'intentToCancelOverride' => null,
         'configId' => null,
         'sellerOrderId' => null
     ];
@@ -112,7 +112,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => false,
         'fulfillment' => false,
         'serialNumbers' => false,
-        'intentToCancel' => false,
+        'intentToCancelOverride' => false,
         'configId' => false,
         'sellerOrderId' => false
     ];
@@ -136,7 +136,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => 'referenceLineId',
         'fulfillment' => 'fulfillment',
         'serialNumbers' => 'serialNumbers',
-        'intentToCancel' => 'intentToCancel',
+        'intentToCancelOverride' => 'intentToCancelOverride',
         'configId' => 'configId',
         'sellerOrderId' => 'sellerOrderId'
     ];
@@ -159,7 +159,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => 'setReferenceLineId',
         'fulfillment' => 'setFulfillment',
         'serialNumbers' => 'setSerialNumbers',
-        'intentToCancel' => 'setIntentToCancel',
+        'intentToCancelOverride' => 'setIntentToCancel',
         'configId' => 'setConfigId',
         'sellerOrderId' => 'setSellerOrderId'
     ];
@@ -182,7 +182,7 @@ class OrderLineType extends BaseModel
         'referenceLineId' => 'getReferenceLineId',
         'fulfillment' => 'getFulfillment',
         'serialNumbers' => 'getSerialNumbers',
-        'intentToCancel' => 'getIntentToCancel',
+        'intentToCancelOverride' => 'getIntentToCancel',
         'configId' => 'getConfigId',
         'sellerOrderId' => 'getSellerOrderId'
     ];
@@ -207,7 +207,7 @@ class OrderLineType extends BaseModel
         $this->setIfExists('referenceLineId', $data ?? [], null);
         $this->setIfExists('fulfillment', $data ?? [], null);
         $this->setIfExists('serialNumbers', $data ?? [], null);
-        $this->setIfExists('intentToCancel', $data ?? [], null);
+        $this->setIfExists('intentToCancelOverride', $data ?? [], null);
         $this->setIfExists('configId', $data ?? [], null);
         $this->setIfExists('sellerOrderId', $data ?? [], null);
     }
@@ -592,31 +592,31 @@ class OrderLineType extends BaseModel
     }
 
     /**
-     * Gets intentToCancel
+     * Gets intentToCancelOverride
      *
      * @return string|null
     
      */
     public function getIntentToCancel()
     {
-        return $this->container['intentToCancel'];
+        return $this->container['intentToCancelOverride'];
     }
 
     /**
-     * Sets intentToCancel
+     * Sets intentToCancelOverride
      *
-     * @param string|null $intentToCancel intentToCancel
+     * @param string|null $intentToCancelOverride intentToCancelOverride
      *
      * @return self
     
      */
-    public function setIntentToCancel($intentToCancel)
+    public function setIntentToCancel($intentToCancelOverride)
     {
-        if (is_null($intentToCancel)) {
-            throw new \InvalidArgumentException('non-nullable intentToCancel cannot be null');
+        if (is_null($intentToCancelOverride)) {
+            throw new \InvalidArgumentException('non-nullable intentToCancelOverride cannot be null');
         }
 
-        $this->container['intentToCancel'] = $intentToCancel;
+        $this->container['intentToCancelOverride'] = $intentToCancelOverride;
         return $this;
     }
 
